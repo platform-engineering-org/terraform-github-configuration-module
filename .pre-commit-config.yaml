@@ -1,0 +1,29 @@
+---
+default_language_version:
+  python: python3
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+        args:
+          - --markdown-linebreak-ext=md
+      - id: check-merge-conflict
+      - id: no-commit-to-branch
+        args:
+          - "--branch"
+          - "main"
+      - id: check-symlinks
+      - id: check-added-large-files
+      - id: check-json
+      - id: check-yaml
+  - repo: https://github.com/markdownlint/markdownlint
+    rev: v0.13.0
+    hooks:
+      - id: markdownlint
+  - repo: https://github.com/maxbrunet/pre-commit-renovate
+    rev: 37.8.1
+    hooks:
+      - id: renovate-config-validator
