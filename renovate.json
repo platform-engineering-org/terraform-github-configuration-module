@@ -11,6 +11,14 @@
         "\"image\": \"(?<depName>mcr.microsoft.com/vscode/devcontainers/base):(?<currentValue>.*)\""
       ],
       "datasourceTemplate": "docker"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": [".devcontainer/devcontainer.json"],
+      "matchStrings": [
+        "\"(?<depName>ghcr.io/devcontainers/features/terraform):(?<currentValue>.*)\": {"
+      ],
+      "datasourceTemplate": "docker"
     }
   ]
 }
