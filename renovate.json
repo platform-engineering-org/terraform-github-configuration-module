@@ -2,5 +2,15 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "github>platform-engineering-org/.github"
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": [".devcontainer/devcontainer.json"],
+      "matchStrings": [
+        "\"image\": \"(?<depName>mcr.microsoft.com/vscode/devcontainers/base):(?<currentValue>.*)\""
+      ],
+      "datasourceTemplate": "docker"
+    }
   ]
 }
