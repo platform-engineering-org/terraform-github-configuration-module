@@ -6,7 +6,7 @@
             "version": "1.6.1",
             "terragrunt": "0.52.1"
         },
-        "ghcr.io/devcontainers-contrib/features/pre-commit:2.0.9": {
+        "ghcr.io/devcontainers-contrib/features/pre-commit:2.0.17": {
             "version": "3.4.0"
         }
     }
