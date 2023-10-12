@@ -16,9 +16,20 @@
       "customType": "regex",
       "fileMatch": [".devcontainer/devcontainer.json"],
       "matchStrings": [
-        "\"(?<depName>ghcr.io/devcontainers/features/terraform):(?<currentValue>.*)\": {"
+        "\"(?<depName>ghcr.io/devcontainers/features/terraform):(?<currentValue>.*)\""
       ],
       "datasourceTemplate": "docker"
+    },
+    {
+      "customType": "regex",
+      "matchStringsStrategy": "combination",
+      "fileMatch": [".devcontainer/devcontainer.json"],
+      "matchStrings": [
+        "\"ghcr.io/devcontainers/features/terraform\"",
+        "\"version\":\\s*\"(?<currentValue>.*)\""
+      ],
+      "depNameTemplate": "hashicorp/terraform",
+      "datasourceTemplate": "github-releases"
     }
   ]
 }
