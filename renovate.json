@@ -59,5 +59,13 @@
       "depNameTemplate": "pre-commit/pre-commit",
       "datasourceTemplate": "github-releases"
     }
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": [
+        "gruntwork-io/terragrunt"
+      ],
+      "extractVersion": "^v(?<version>.*)$"
+    }
   ]
 }
