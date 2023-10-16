@@ -38,7 +38,8 @@
         "\"(?<depName>terragrunt)\":\\s*\"(?<currentValue>.*)\""
       ],
       "depNameTemplate": "gruntwork-io/terragrunt",
-      "datasourceTemplate": "github-releases"
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^v?(?<version>.*)$"
     },
     {
       "customType": "regex",
@@ -58,14 +59,6 @@
       ],
       "depNameTemplate": "pre-commit/pre-commit",
       "datasourceTemplate": "github-releases"
-    }
-  ],
-  "packageRules": [
-    {
-      "matchPackageNames": [
-        "gruntwork-io/terragrunt"
-      ],
-      "extractVersion": "^v(?<version>.*)$"
     }
   ]
 }
