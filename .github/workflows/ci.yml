@@ -22,7 +22,7 @@ jobs:
     container:
       image: hashicorp/terraform:${{ matrix.terraform }}
     steps:
-      - uses: actions/checkout@v4.1.4
+      - uses: actions/checkout@v4.1.6
       - run: terraform init -get -backend=false -input=false
       - run: terraform fmt -recursive -check=true -write=false
       - run: terraform validate
